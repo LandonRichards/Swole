@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS swole_db;
+
+CREATE DATABASE swole_db;
+
