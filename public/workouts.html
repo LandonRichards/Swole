@@ -11,26 +11,90 @@
 
 <body>
     <div class="container">
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">My Workouts</div>
-            <!-- Table -->
-            <table class="table">
-                <thead>
-                	<th>Date</th>
-                	<th>Title</th>
-                	<th>Points Earned</th>
-                </thead>
-                <tbody>
-                	<tr>
-                		<td>2/2/2015</td>
-                		<td>Cardio</td>
-                		<td>10</td>
-                	</tr>
-                </tbody>
-            </table>
+        <div class=“jumbotron”>
+            <h1 style="text-align: center">My Workouts</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Enter a workout</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" id="myWorkouts">
+                        <select class="custom-select" id='addWorkout'>
+                            <option selected>Choose Your Workout</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="legs">Leg Day</option>
+                            <option value="arms">Upper body/Arms</option>
+                            <option value="core">Core Workout</option>
+                            <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
+                        </select>
+                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">My Workouts</div>
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Points Earned</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2/2/2015</td>
+                            <td>Cardio</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 </body>
+<script type="text/javascript">
+$(document).ready(function() {
+    //this is where I left off
+    // $.get('/api/workouts', function(data) {
+    //     for (let i = 0; i < data.length; i++) {
+
+    //     }
+    // })
+})
+$('#submit').on('click', function() {
+    var type = $("#addWorkout").val();
+    var mins = parseInt($("#minutes").val().trim());
+    if (mins !== mins * 1 || type == "Choose Your Workout") {
+        alert('There is an error with your submission')
+    } else {
+        var points;
+        switch (type) {
+            case "cardio":
+                points = mins * 2;
+                break;
+            case "legs":
+                points = mins * 5;
+                break;
+            case "arms":
+                points = mins * 5;
+                break;
+            case "core":
+                points = mins * 7;
+                break;
+            default:
+                break;
+        };
+    }
+    var newWorkout = {
+        workoutTitle: type,
+        points: points
+    }
+    $.post("/api/workouts", function(data) {
+        data: newWorkout
+    });
+    alert('Workout Added. Nice job!');
+    location.reload();
+})
+</script>
 
 </html>
