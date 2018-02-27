@@ -33,7 +33,7 @@ module.exports = function(app) {
     	}).then(function(user){
     		if(user){
     			console.log('Found')
-    			res.redirect('back');
+    			return res.redirect('back');
     		} else{
     			console.log('No user found')
     		};
