@@ -86,12 +86,11 @@ $('#submit').on('click', function() {
         };
     }
     var newWorkout = {
-        workoutTitle: type,
+        userName: "troe11",
         points: points
     }
-    $.post("/api/workouts", function(data) {
-        data: newWorkout
-    });
+    $.post("/api/workouts", newWorkout);
+
     alert('Workout Added. Nice job!');
     location.reload();
 })
