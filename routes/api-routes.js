@@ -10,7 +10,7 @@ module.exports = function(app){
             password: req.body.password,
             points: 0
 		}).then(function(data){
-			res.send(data);
+			res.json(data);
 		});
 	});
 
