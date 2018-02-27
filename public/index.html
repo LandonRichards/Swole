@@ -66,12 +66,12 @@ $("#check-user").on('click', function() {
     };
 
     //need to figure out how to check user name/pw on server side
-    function checkUser() {
-        $.post('/api/users/', user).done(function(data) {
-            console.log(data)
-            window.location.href = "/workout";
-        });
-    }
+
+    $.post('/api/users/', user).done(function(data) {
+        console.log(data)
+        window.location.href = "/workout";
+    });
+
 
 })
 </script>
