@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 var db = require('./models');
 // Routes
 // // =============================================================
-// require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
