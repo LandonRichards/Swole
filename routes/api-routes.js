@@ -31,12 +31,11 @@ module.exports = function(app) {
     			password:req.body.password
     		}
     	}).then(function(user){
-    		console.log(user)
-    		// if(user){
-    		// 	console.log("FOUND!")
-    		// } else{
-    		// 	console.log('No user found')
-    		// }
+    		if(user){
+    			console.log("FOUND!")
+    		} else{
+    			console.log('No user found')
+    		};
     	})
     })
 }
