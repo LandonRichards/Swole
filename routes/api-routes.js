@@ -32,7 +32,8 @@ module.exports = function(app) {
     		}
     	}).then(function(user){
     		if(user){
-    			res.redirect('/workouts');
+    			console.log('Found')
+    			res.redirect('back');
     		} else{
     			console.log('No user found')
     		};
