@@ -69,7 +69,7 @@ $("#check-user").on('click', function() {
 
     $.post('/api/users/', user).done(function(data) {
         console.log(data)
-        window.location.href = "/workout";
+        window.location.href = "/workouts/";
     });
 
 
