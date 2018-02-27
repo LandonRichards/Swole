@@ -10,17 +10,17 @@ module.exports = function(sequelize,DataTypes){
 		password: DataTypes.STRING,
 		points: DataTypes.TINYINT
 	},{timestamp:false});
+	return Users
+	// var Workouts = sequelize.define('Workouts',{
+	// 	//We may need to make this a foreign key so that it references
+	// 	//the previous table, possibly something to ask JJ
+	// 	userName:DataTypes.STRING,
+	// 	workoutTitle:DataTypes.STRING,
+	// 	points:DataTypes.TINYINT
+	// });
 
-	var Workouts = sequelize.define('Workouts',{
-		//We may need to make this a foreign key so that it references
-		//the previous table, possibly something to ask JJ
-		userName:DataTypes.STRING,
-		workoutTitle:DataTypes.STRING,
-		points:DataTypes.TINYINT
-	});
-
-	var STMB = sequelize.define('MessageBoard',{
-		userName:DataTypes.STRING,
-		message:DataTypes.STRING
-	});
+	// var STMB = sequelize.define('MessageBoard',{
+	// 	userName:DataTypes.STRING,
+	// 	message:DataTypes.STRING
+	// });
 };

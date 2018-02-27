@@ -14,8 +14,28 @@ ol,ul {
 	text-align: center;
 	margin-top: 2%;
 }
+<<<<<<< HEAD
 .jumbotron {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
 	background-size: cover;}
 
 	
+=======
+
+#minutes{
+	max-width: 150px;
+}
+
+#addWorkout, #minutes {
+	margin-right: 5%; 
+}
+#submit {
+	background-color: black;
+}
+#addWorkout {
+	width: 250px;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+>>>>>>> 815b42997026bc2834eec0f30efa2f0d796b8972
