@@ -6,7 +6,7 @@ module.exports = function(app){
 		db.Users.create({
 			firstName: req.body.firstName,
             lastName: req.body.lastName,
-            emailAddress: req.body.emailAddress,
+            email: req.body.emailAddress,
             userName: req.body.userName,
             password: req.body.password,
             points: 0
