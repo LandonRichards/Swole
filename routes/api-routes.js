@@ -1,7 +1,8 @@
 var db = require("../models");
 
 module.exports = function(app){
-	app.get('/api/new-user',function(req,res){
+	app.post("/api/user/",function(req,res){
+		console.log(req.body)
 		db.Users.create({
 			firstName: req.body.firstName,
             lastName: req.body.lastName,

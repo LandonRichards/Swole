@@ -57,9 +57,7 @@ $(document).ready(function() {
         }
        console.log(newUser)
 
-        $.post('/api/new-user', function(data) {
-            data: newUser
-        })
+        $.post("/api/user/", newUser);
     })
 
     // var authorList = $("tbody");
