@@ -67,8 +67,9 @@ $("#check-user").on('click', function() {
 
     //need to figure out how to check user name/pw on server side
 
-    $.post('/api/users/', user).done(function(data) {
-        console.log(data)
+    $.post('/api/users/', user).done(function() {
+        //not sure how to call the response, it is going to 
+        console.log(userName)
         window.location.href = "/workouts/";
     });
 

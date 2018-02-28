@@ -33,7 +33,7 @@ module.exports = function(app) {
     	}).then(function(user){
     		if(user){
     			console.log('Found')
-    			return res.send(user);
+    			res.send({userName:req.body.userName});
     		} else{
     			console.log('No user found')
     		};
