@@ -69,7 +69,7 @@ $("#check-user").on('click', function() {
 
     $.post('/api/users/', user).done(function() {
         //not sure how to call the response, it is going to 
-        console.log(userName)
+        alert('success')
         window.location.href = "/workouts/";
     });
 
