@@ -14,29 +14,48 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/workouts", function(req, res) {
+    app.put("/api/workouts/", function(req, res) {
         db.Users.update({
-            points:points+req.body.points
+            points: points + req.body.points
         }, {
-        	where:{
-        		userName:req.body.userName
-        	}
+            where: {
+                userName: req.body.userName
+            }
         });
     });
 
-    app.post("/api/users/", function(req,res){
-    	db.Users.findOne({
-    		where:{
-    			userName:req.body.userName,
-    			password:req.body.password
-    		}
-    	}).then(function(user){
-    		if(user){
-    			console.log('Found')
-    			res.send({userName:req.body.userName});
-    		} else{
-    			console.log('No user found')
-    		};
-    	})
+    app.post("/api/workouts/", function(req, res) {
+        db.Workouts.create({
+            userName: ,
+            workoutTitle: ,
+            points: 
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
+
+    app.post("/api/users/", function(req, res) {
+        db.Users.findOne({
+            where: {
+                userName: req.body.userName,
+                password: req.body.password
+            }
+        }).then(function(user) {
+            if (user) {
+                console.log('Found')
+                res.send({ userName: req.body.userName });
+            } else {
+                console.log('No user found')
+            };
+        })
+    });
+
+    app.get("/api/messages", function(req, res) {
+        db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
+            .then(function(data) {
+                res.json(data)
+            })
     })
+
+    
 }
