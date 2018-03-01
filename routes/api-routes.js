@@ -14,6 +14,16 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/messages", function(req, res) {
+        db.MessageBoards.findAll({})
+            .then(function(data) {
+                res.json(data)
+            }).catch(function(err){
+            console.log(err)
+            res.json(err)
+        });
+    });
+
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             where: {
@@ -65,15 +75,7 @@ module.exports = function(app) {
         })
     });
 
-    app.get("/api/messages/", function(req, res) {
-        db.STMB.findAll({})
-            .then(function(data) {
-                res.json(data)
-            }).catch(function(err){
-            console.log(err)
-            res.json(err)
-        })
-    })
+    
 
     
 }
