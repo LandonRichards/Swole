@@ -43,7 +43,7 @@ module.exports = function(app) {
         }).then(function(user) {
             if (user) {
                 console.log('Found')
-                console.log(user)
+                res.send(user)
             } else {
                 console.log('No user found')
             };
