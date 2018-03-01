@@ -35,15 +35,19 @@ module.exports = function(app) {
         }).then(function(data) {
             res.json(data)
         });
+    });
 
+    app.put("/api/users", function(req,res){
         db.Users.update({
             points: points += req.body.points
         }, {
             where: {
                 userName: req.body.userName
             }
+        }).then(function(data){
+            res.json(data);
         });
-    });
+    })
 
     app.post("/api/users", function(req, res) {
         db.Users.findOne({

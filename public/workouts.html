@@ -71,7 +71,6 @@ $(document).ready(function() {
 
     //this is where I left off
     $.get('/api/workouts/' + userName, function(data) {
-        console.log(data)
         for (let i = 0; i < data.length; i++) {
             var newWorkoutRow = $('<tr>')
             var dateTd = $('<td>').text(data[i].createdAt);
@@ -112,8 +111,10 @@ $('#submit').on('click', function() {
             workoutTitle: type,
             points: points
         }
-        $.post("/api/workouts", newWorkout);
 
+
+        $.post("/api/workouts", newWorkout);
+        $.put("/api/workouts", newWorkout);
         alert('Workout Added. Nice job!');
         location.reload();
     }
