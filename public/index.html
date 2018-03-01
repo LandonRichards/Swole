@@ -66,12 +66,12 @@ $("#check-user").on('click', function() {
 
     //need to figure out how to check user name/pw on server side
 
-    $.post("/api/users", user).done(function() {
-        console.log(user)
+    $.post("/api/users", user).done(function(data) {
         //not sure how to get the obj Im trying to return in api-routes 
         // function populateStorage (){
         //     // localStorage.setItem('userName',user);
         // }
+        console.log(data)
         window.location.href = "/workouts";
     });
 
