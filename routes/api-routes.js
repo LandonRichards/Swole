@@ -65,7 +65,7 @@ module.exports = function(app) {
         })
     });
 
-    app.get("/api/messages", function(req, res) {
+    app.get("/api/messages/", function(req, res) {
         db.STMB.findAll({})
             .then(function(data) {
                 res.json(data)
