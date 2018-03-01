@@ -62,9 +62,8 @@ $(document).ready(function() {
     //I am not sure if this will work, need to add dummy data to it
     $.get("/api/messages", function(data) {
         for (let i = 0; i < data.length; i++) {
-            var user = $('<div>').text(data[i].userName);
-            var message = $('<div>').text(data[i].message);
-            $(".current-messages").append(user + ": " + message)
+            var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message);
+            $(".current-messages").append(messageDiv)
         }
     });
 
