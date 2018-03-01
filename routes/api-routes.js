@@ -14,16 +14,6 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/workouts", function(req, res) {
-        db.Users.update({
-            points: points + req.body.points
-        }, {
-            where: {
-                userName: req.body.userName
-            }
-        });
-    });
-
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             where: {
@@ -44,6 +34,14 @@ module.exports = function(app) {
             points: req.body.points
         }).then(function(data) {
             res.json(data)
+        });
+
+        db.Users.update({
+            points: points += req.body.points
+        }, {
+            where: {
+                userName: req.body.userName
+            }
         });
     });
 
