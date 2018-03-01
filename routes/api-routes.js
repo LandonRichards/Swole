@@ -24,15 +24,15 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/workouts/", function(req, res) {
-        db.Workouts.create({
-            userName: ,
-            workoutTitle: ,
-            points: 
-        }).then(function(data) {
-            res.json(data)
-        });
-    });
+    // app.post("/api/workouts/", function(req, res) {
+    //     db.Workouts.create({
+    //         userName: ,
+    //         workoutTitle: ,
+    //         points: 
+    //     }).then(function(data) {
+    //         res.json(data)
+    //     });
+    // });
 
     app.post("/api/users/", function(req, res) {
         db.Users.findOne({
