@@ -74,7 +74,7 @@ $(document).ready(function() {
     });
 
     //this is where I left off
-    $.post('/api/workouts', userName, function(data) {
+    $.get('/api/workouts/:userName', function(data) {
         console.log(data)
         // for (let i = 0; i < data.length; i++) {
 

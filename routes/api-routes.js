@@ -24,10 +24,10 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/workouts", function(req,res){
+    app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             where: {
-                userName: req.body.userName
+                userName: res.param.userName
             }
         }).then(function(data){
             res.json(data)
