@@ -24,15 +24,25 @@ module.exports = function(app) {
         });
     });
 
-    // app.post("/api/workouts/", function(req, res) {
-    //     db.Workouts.create({
-    //         userName: ,
-    //         workoutTitle: ,
-    //         points: 
-    //     }).then(function(data) {
-    //         res.json(data)
-    //     });
-    // });
+    app.get("/api/workouts/", function(req,res){
+        db.Workouts.findAll({
+            where: {
+                userName: req.body.userName
+            }
+        }).then(function(data){
+            res.json(data)
+        })
+    })
+
+    app.post("/api/workouts/", function(req, res) {
+        db.Workouts.create({
+            userName: req.body.userName,
+            workoutTitle: req.body.workoutTitle,
+            points: req.body.points
+        }).then(function(data) {
+            res.json(data)
+        });
+    });
 
     app.post("/api/users", function(req, res) {
         db.Users.findOne({
@@ -49,12 +59,12 @@ module.exports = function(app) {
         })
     });
 
-    // app.get("/api/messages", function(req, res) {
-    //     db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
-    //         .then(function(data) {
-    //             res.json(data)
-    //         })
-    // })
+    app.get("/api/messages", function(req, res) {
+        db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
+            .then(function(data) {
+                res.json(data)
+            })
+    })
 
     
 }
