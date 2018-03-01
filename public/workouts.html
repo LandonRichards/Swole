@@ -33,34 +33,54 @@
             </div>
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading">My Workouts</div>
-                <!-- Table -->
-                <table class="table">
-                    <thead>
-                        <th>Date</th>
-                        <th>Title</th>
-                        <th>Points Earned</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2/2/2015</td>
-                            <td>Cardio</td>
-                            <td>10</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="panel-heading">
+                    <h2 class="mb">Smack Talk Message Board</h2>
+                    <div class="current-messages">
+                        
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">My Workouts</div>
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Points Earned</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2/2/2015</td>
+                        <td>Cardio</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
+    //I am not sure if this will work, need to add dummy data to it
+    $.get('/api/messages',function(data){
+        for(let i = 0; i<data.length;i++){
+            var user = $('<h3>').text(data[i].userName);
+            var message = $('<p>').text(data[i].message);
+            $(".current-messages").append(user+ ": "+ message) 
+        }
+    })
+
     //this is where I left off
     // $.get('/api/workouts', function(data) {
     //     for (let i = 0; i < data.length; i++) {
 
     //     }
     // })
-})
+});
+
 $('#submit').on('click', function() {
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
@@ -86,12 +106,12 @@ $('#submit').on('click', function() {
         };
     }
     var newWorkout = {
+        userName: "troe11",
         workoutTitle: type,
         points: points
     }
-    $.post("/api/workouts", function(data) {
-        data: newWorkout
-    });
+    $.post("/api/workouts", newWorkout);
+
     alert('Workout Added. Nice job!');
     location.reload();
 })
