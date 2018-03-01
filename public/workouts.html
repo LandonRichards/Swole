@@ -75,7 +75,7 @@ $(document).ready(function() {
     });
 
     //this is where I left off
-    $.get('/api/workouts', function(data) {
+    $.post('/api/workouts', userName, function(data) {
         console.log(data)
         // for (let i = 0; i < data.length; i++) {
 
@@ -108,7 +108,7 @@ $('#submit').on('click', function() {
         };
     }
     var newWorkout = {
-        userName: "troe11",
+        userName: userName,
         workoutTitle: type,
         points: points
     }

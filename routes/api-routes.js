@@ -24,7 +24,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/workouts/", function(req,res){
+    app.get("/api/workouts", function(req,res){
         db.Workouts.findAll({
             where: {
                 userName: req.body.userName
