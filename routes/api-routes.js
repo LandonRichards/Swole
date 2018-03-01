@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    app.post("/api/user/", function(req, res) {
+    app.post("/api/user", function(req, res) {
         db.Users.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -14,7 +14,7 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/api/workouts/", function(req, res) {
+    app.put("/api/workouts", function(req, res) {
         db.Users.update({
             points: points + req.body.points
         }, {
@@ -34,7 +34,7 @@ module.exports = function(app) {
     //     });
     // });
 
-    app.post("/api/users/", function(req, res) {
+    app.post("/api/users", function(req, res) {
         db.Users.findOne({
             where: {
                 userName: req.body.userName,
