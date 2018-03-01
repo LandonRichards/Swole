@@ -49,12 +49,12 @@ module.exports = function(app) {
         })
     });
 
-    app.get("/api/messages", function(req, res) {
-        db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
-            .then(function(data) {
-                res.json(data)
-            })
-    })
+    // app.get("/api/messages", function(req, res) {
+    //     db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
+    //         .then(function(data) {
+    //             res.json(data)
+    //         })
+    // })
 
     
 }

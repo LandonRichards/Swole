@@ -64,6 +64,8 @@
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
+    var userName = storage.getItem('userName');
+    console.log(userName)
     //I am not sure if this will work, need to add dummy data to it
     $.get('/api/messages',function(data){
         for(let i = 0; i<data.length;i++){
