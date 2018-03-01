@@ -27,7 +27,7 @@ module.exports = function(app) {
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             where: {
-                userName: req.param.userName
+                userName: req.params.userName
             }
         }).then(function(data){
             res.json(data)
