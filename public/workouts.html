@@ -74,8 +74,9 @@ $(document).ready(function() {
 
     $.get("/api/workouts/" + userName, function(data) {
         for (let i = 0; i < data.length; i++) {
+            var newDate = data[i].createdAt.split(' ');
             var newWorkoutRow = $('<tr>')
-            var dateTd = $('<td>').text(data[i].createdAt);
+            var dateTd = $('<td>').text(newDate[0]);
             var titleTd = $('<td>').text(data[i].workoutTitle);
             var pointsTd = $('<td>').text(data[i].points);
             newWorkoutRow.append(dateTd, titleTd, pointsTd);
