@@ -36,8 +36,8 @@
                 <div class="panel-heading">
                     <h2 class="mb">Smack Talk Message Board</h2>
                     <div class="panel-body">
-                    <div class="current-messages">
-                    </div>
+                        <div class="current-messages">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,13 +111,13 @@ $('#submit').on('click', function() {
             points: points
         }
         $.ajax({
-                method: "PUT",
-                url: "/api/users",
-                data: newWorkout
-            }).then(function(){
-                console.log('point updated')
-            })
-            
+            method: "PUT",
+            url: "/api/users",
+            data: newWorkout
+        }).then(function() {
+            console.log('point updated')
+        })
+
 
         $.post("/api/workouts", newWorkout);
         alert('Workout Added. Nice job!');
