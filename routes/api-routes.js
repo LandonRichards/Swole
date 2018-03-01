@@ -53,15 +53,15 @@ module.exports = function(app) {
             }
         }).then(function(user) {
             if (user) {
-                console.log(user)
+                console.log(user);
                 // res.send({ });
             } else {
-                console.log('No user found')
+                console.log('No user found');
             };
         })
     });
 
-    app.get("/api/messages", function(req, res) {
+    app.get("/api/messages/", function(req, res) {
         db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
             .then(function(data) {
                 res.json(data)
