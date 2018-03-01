@@ -66,10 +66,13 @@ module.exports = function(app) {
     });
 
     app.get("/api/messages", function(req, res) {
-        db.STMB.findAll({ limit: 10, order: '"createdAt" DESC' })
+        db.STMB.findAll({})
             .then(function(data) {
                 res.json(data)
-            })
+            }).catch(function(err){
+            console.log(err)
+            res.json(err)
+        })
     })
 
     
