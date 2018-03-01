@@ -84,6 +84,7 @@ $(document).ready(function() {
 });
 
 $('#submit').on('click', function() {
+    var userName = localStorage.getItem('username');
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
