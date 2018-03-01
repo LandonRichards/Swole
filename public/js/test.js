@@ -4,7 +4,7 @@
 $(document).ready(function() {
     var userInput = $("#user-input") // use dis in css, also gets the value from HTML
     var userList = $("#user-List")
-    var userContainer = $(".user-container")
+    var userContainer = $("#user-container")
 
     // we need to create some click events for users to input data
     $(document).on("submit", "user-form", userFormSubmit);
@@ -16,7 +16,7 @@ $(document).ready(function() {
         //this function is going to run when we click da button
         event.preventDefault();
 
-        if (!nameInput.val().trim().trim()) {
+        if (!userInput.val().trim().trim()) {
             //why are there two trims in here?
             return;
             //userinputvaldiation yay

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Workouts</title>
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<body>
+
+
+<!-- ALL THE NAV BAR STUFF GOES HERE -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-2">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+              <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
+            </li>
+          </ul>
+          <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
+            <form class="navbar-form navbar-right form-inline" role="form">
+              <div class="form-group">
+                <label class="sr-only" for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required />
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="Password">Password</label>
+                <input type="password" class="form-control" id="Password" placeholder="Password" required />
+              </div>
+              <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+          </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+<!--     THIS IS THE END OF THE NAV BAR STUFF -->
+
+    <div class="container">
+        <div class=“jumbotron”>
+            <h1 style="text-align: center">My Workouts</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Enter a workout</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" id="myWorkouts">
+                        <select class="custom-select" id='addWorkout'>
+                            <option selected>Choose Your Workout</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="legs">Leg Day</option>
+                            <option value="arms">Upper body/Arms</option>
+                            <option value="core">Core Workout</option>
+                            <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
+                        </select>
+                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">My Workouts</div>
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Points Earned</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2/2/2015</td>
+                            <td>Cardio</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    <!-- 
+    ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <h3 class="footertext">About Us:</h3>
+                <div class="col-md-4">
+                    <center>
+                        <img id="users" src="https://avatars1.githubusercontent.com/u/23384286?s=400&v=4" class="img-circle" height="42" width="42" alt="the-brains">
+                        
+                        <h4 class="footertext">Travis</h4>
+                        <p class="footertext">Ball so hard
+                            
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <img id="users" src="https://avatars0.githubusercontent.com/u/30741663?s=400&v=4" class="img-circle" height="42" width="42" alt="...">
+                        
+                        <h4 class="footertext">LexDexic</h4>
+                        <p class="footertext">Might be a cat.
+                            
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <img id="users" src="https://avatars1.githubusercontent.com/u/31899881?s=400&u=d6fa7913f8d4c2d5dd6d5799218474b023118821&v=4" class="img-circle" height="42" width="42" alt="...">
+                        
+                        <h4 class="footertext">Landon</h4>
+                        <p class="footertext">You cant code from Texas.
+                            
+                    </center>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    <center><a href="#">Contact the team by clicking their photos</a>
+                        <p class="footertext">Copyright how do you copyright things</p>
+                    </center>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- END OF FOOTER BACK TO REGULARLY SCHEDULED PROGRAMMING -->
+</body>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    //this is where I left off
+    // $.get('/api/workouts', function(data) {
+    //     for (let i = 0; i < data.length; i++) {
+
+    //     }
+    // })
+})
+$('#submit').on('click', function() {
+    var type = $("#addWorkout").val();
+    var mins = parseInt($("#minutes").val().trim());
+    if (mins !== mins * 1 || type == "Choose Your Workout") {
+        alert('There is an error with your submission')
+    } else {
+        var points;
+        switch (type) {
+            case "cardio":
+                points = mins * 2;
+                break;
+            case "legs":
+                points = mins * 5;
+                break;
+            case "arms":
+                points = mins * 5;
+                break;
+            case "core":
+                points = mins * 7;
+                break;
+            default:
+                break;
+        };
+    }
+    var newWorkout = {
+        workoutTitle: type,
+        points: points
+    }
+    $.post("/api/workouts", function(data) {
+        data: newWorkout
+    });
+    alert('Workout Added. Nice job!');
+    location.reload();
+})
+</script>
+
+</html>
