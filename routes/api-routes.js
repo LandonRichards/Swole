@@ -36,6 +36,7 @@ module.exports = function(app) {
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             limit:10,
+            order: [ [ 'createdAt', 'DESC' ]],
             where: {
                 userName: req.params.userName
             }
