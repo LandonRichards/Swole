@@ -67,8 +67,8 @@ $(document).ready(function() {
     var userName = localStorage.getItem('username');
     $.get("/api/messages", function(data) {
         for (let i = 0; i < data.length; i++) {
-            var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message).css("border-bottom","3px solid black");
-            $(".current-messages").append(messageDiv)
+            var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message).class("smack-mess");
+            $(".current-messages").append("br"+ messageDiv)
         }
     });
 

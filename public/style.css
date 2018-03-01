@@ -23,6 +23,10 @@ ol,ul {
 	width: 90%;
 }
 
+.smack-mess {
+	border-bottom: 1px solid black;
+}
+
 #minutes{
 	max-width: 150px;
 }
