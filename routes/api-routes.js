@@ -10,6 +10,7 @@ module.exports = function(app) {
             password: req.body.password,
             points: 0
         }).then(function(data) {
+        	res.send({ userName: req.body.userName });
             res.json(data);
         });
     });
@@ -24,17 +25,27 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/workouts/", function(req, res) {
-        db.Workouts.create({
-            userName: ,
-            workoutTitle: ,
-            points: 
-        }).then(function(data) {
-            res.json(data)
-        });
-    });
+    // app.post("/api/workouts/", function(req, res) {
+    //     db.Workouts.create({
+    //         userName: ,
+    //         workoutTitle: ,
+    //         points: 
+    //     }).then(function(data) {
+    //         res.json(data)
+    //     });
+    // });
 
-    app.post("/api/users/", function(req, res) {
+    // app.get("/api/workouts/", function(req,res){
+    // 	db.findAll({
+    // 		where:{
+    // 			userName: //code to put here for userName
+    // 		}
+    // 	}).then(function(data){
+    // 		res.json(data)
+    // 	})
+    // })
+
+    app.post("api/users/", function(req, res) {
         db.Users.findOne({
             where: {
                 userName: req.body.userName,
@@ -42,8 +53,8 @@ module.exports = function(app) {
             }
         }).then(function(user) {
             if (user) {
-                console.log('Found')
-                res.send({ userName: req.body.userName });
+                console.log(user)
+                // res.send({ });
             } else {
                 console.log('No user found')
             };
@@ -56,6 +67,4 @@ module.exports = function(app) {
                 res.json(data)
             })
     })
-
-    
 }

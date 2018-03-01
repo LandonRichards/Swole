@@ -35,8 +35,10 @@
                 <!-- Default panel contents -->
                 <div class="panel-heading">
                     <h2 class="mb">Smack Talk Message Board</h2>
+                </div>
+                <div class="panel-body">
                     <div class="current-messages">
-                        
+                        <p>hello</p>
                     </div>
                 </div>
             </div>
@@ -65,20 +67,21 @@
 <script type="text/javascript">
 $(document).ready(function() {
     //I am not sure if this will work, need to add dummy data to it
-    $.get('/api/messages',function(data){
-        for(let i = 0; i<data.length;i++){
+    $.get('/api/messages', function(data) {
+        for (let i = 0; i < data.length; i++) {
             var user = $('<h3>').text(data[i].userName);
             var message = $('<p>').text(data[i].message);
-            $(".current-messages").append(user+ ": "+ message) 
+            $(".current-messages").append(user + ": " + message)
         }
     })
 
-    //this is where I left off
-    // $.get('/api/workouts', function(data) {
-    //     for (let i = 0; i < data.length; i++) {
+    // $.get("/api/workouts/", function(data){
+    //     for(let i = 0; i < data.length; i++){
+    //         //loop through to make rows of workouts
 
     //     }
     // })
+
 });
 
 $('#submit').on('click', function() {
@@ -106,7 +109,7 @@ $('#submit').on('click', function() {
         };
     }
     var newWorkout = {
-        userName: "troe11",
+        // userName: //you need to push this from when you sign in,
         workoutTitle: type,
         points: points
     }
