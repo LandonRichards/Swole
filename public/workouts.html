@@ -114,6 +114,8 @@ $('#submit').on('click', function() {
                 method: "PUT",
                 url: "/api/workouts",
                 data: newWorkout
+            }).then(function(){
+                console.log('point updated')
             })
             
 

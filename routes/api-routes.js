@@ -38,6 +38,7 @@ module.exports = function(app) {
     });
 
     app.put("/api/users", function(req,res){
+        console.log(req.body.points,req.body.userName)
         db.Users.update({
             points: points += req.body.points
         }, {
@@ -45,6 +46,7 @@ module.exports = function(app) {
                 userName: req.body.userName
             }
         }).then(function(data){
+
             res.json(data);
         });
     })
