@@ -42,8 +42,8 @@ module.exports = function(app) {
             }
         }).then(function(user) {
             if (user) {
-                console.log('Found')
-                res.send(user)
+                console.log(user.Users.dataValues.userName)
+                // res.send(user.Users.dataValues.userName)
             } else {
                 console.log('No user found')
             };
