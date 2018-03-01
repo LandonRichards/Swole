@@ -27,10 +27,13 @@ module.exports = function(app) {
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             where: {
-                userName: res.param.userName
+                userName: req.param.userName
             }
         }).then(function(data){
             res.json(data)
+        }).catch(function(err){
+            console.log(err)
+            res.json(err)
         })
     })
 
