@@ -15,7 +15,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/messages", function(req,res){
-        db.Messages.create({
+        db.MessageBoards.create({
             userName:req.body.userName,
             message:req.body.message
         }).then(function(data){
