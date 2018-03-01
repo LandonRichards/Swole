@@ -50,12 +50,8 @@
                     <th>Title</th>
                     <th>Points Earned</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2/2/2015</td>
-                        <td>Cardio</td>
-                        <td>10</td>
-                    </tr>
+                <tbody id="workoutTable">
+                    
                 </tbody>
             </table>
         </div>
@@ -76,9 +72,14 @@ $(document).ready(function() {
     //this is where I left off
     $.get('/api/workouts/' + userName, function(data) {
         console.log(data)
-        // for (let i = 0; i < data.length; i++) {
-
-        // }
+        for (let i = 0; i < data.length; i++) {
+            var newWorkoutRow = $('<tr>')
+            var dateTd = $('<td>').text(data[i].createdAt);
+            var titleTd = $('<td>').text(data[i].workoutTitle);
+            var pointsTd = $('<td>').text(data[i].points);
+            newWorkoutRow.append(dateTd,titleTd,pointsTd);
+            $('#workoutTable').newWorkoutRow;
+        }
     })
 });
 
