@@ -27,7 +27,7 @@ module.exports = function(app) {
         })
     })
 
-    app.post("/api/workouts/", function(req, res) {
+    app.post("/api/workouts", function(req, res) {
         db.Workouts.create({
             userName: req.body.userName,
             workoutTitle: req.body.workoutTitle,
@@ -46,7 +46,6 @@ module.exports = function(app) {
                 userName: req.body.userName
             }
         }).then(function(data){
-
             res.json(data);
         });
     })

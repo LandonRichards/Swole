@@ -112,7 +112,7 @@ $('#submit').on('click', function() {
         }
         $.ajax({
                 method: "PUT",
-                url: "/api/workouts",
+                url: "/api/users",
                 data: newWorkout
             }).then(function(){
                 console.log('point updated')
@@ -120,7 +120,6 @@ $('#submit').on('click', function() {
             
 
         $.post("/api/workouts", newWorkout);
-        $.ajax("/api/workouts", newWorkout);
         alert('Workout Added. Nice job!');
         location.reload();
     }
