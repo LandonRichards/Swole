@@ -65,7 +65,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var userName = localStorage.getItem('username');
-    //I am not sure if this will work, need to add dummy data to it
     $.get("/api/messages", function(data) {
         for (let i = 0; i < data.length; i++) {
             var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message);
@@ -92,7 +91,8 @@ $("#smack-submit").click(function() {
         userName:userName,
         message:message
     };
-    $.post("/api/messages", newMess)
+    $.post("/api/messages", newMess);
+    location.reload();
 })
 
 $('#submit').on('click', function() {

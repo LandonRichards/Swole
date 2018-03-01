@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/messages", function(req, res) {
-        db.MessageBoards.findAll({})
+        db.MessageBoards.findAll({limit:10})
             .then(function(data) {
                 res.json(data)
             }).catch(function(err){
@@ -35,6 +35,7 @@ module.exports = function(app) {
 
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
+            limit:10,
             where: {
                 userName: req.params.userName
             }
