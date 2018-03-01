@@ -76,7 +76,7 @@ $(document).ready(function() {
         for (let i = 0; i < data.length; i++) {
             var newDate = data[i].createdAt.split('T');
             var newWorkoutRow = $('<tr>')
-            var dateTd = $('<td>').text(newDate[0].reverse());
+            var dateTd = $('<td>').text(newDate[0]);
             var titleTd = $('<td>').text(data[i].workoutTitle);
             var pointsTd = $('<td>').text(data[i].points);
             newWorkoutRow.append(dateTd, titleTd, pointsTd);
