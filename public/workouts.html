@@ -35,12 +35,15 @@
                 <!-- Default panel contents -->
                 <div class="panel-heading">
                     <h2 class="mb">Smack Talk Message Board</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="current-messages">
                     </div>
-                    <div class="panel-body">
-                        <div class="current-messages">
-                        </div>
-                    </div>
-                
+                    <form class="form-inline" id="talk-smack">
+                        <input type="text" class="form-control" id="smack" aria-describedby="addSmack" placeholder="Talk some smack...">
+                        <button type="button" class="btn btn-primary" id="smack-submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="panel panel-default">
@@ -81,6 +84,16 @@ $(document).ready(function() {
         }
     })
 });
+
+$("#smack-submit").click(function() {
+    var userName = localStorage.getItem('username');
+    var message = $('#smack').val().trim();
+    var newMess = {
+        userName:userName,
+        message:message
+    };
+    $.post("/api/messages", newMess)
+})
 
 $('#submit').on('click', function() {
     var userName = localStorage.getItem('username');

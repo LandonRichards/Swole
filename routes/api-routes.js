@@ -14,6 +14,15 @@ module.exports = function(app) {
         });
     });
 
+    app.post("/api/messages", function(req,res){
+        db.Messages.create({
+            userName:req.body.userName,
+            message:req.body.message
+        }).then(function(data){
+            res.json(data);
+        });
+    });
+
     app.get("/api/messages", function(req, res) {
         db.MessageBoards.findAll({})
             .then(function(data) {

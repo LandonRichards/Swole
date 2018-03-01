@@ -16,9 +16,12 @@ ol,ul {
 }
 .jumbotron {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
-	background-size: cover;}
+	background-size: cover;
+}
 
-	
+#smack{
+	width: 90%;
+}
 
 #minutes{
 	max-width: 150px;
