@@ -61,11 +61,12 @@ $(document).ready(function() {
     var userName = localStorage.getItem('username');
     //I am not sure if this will work, need to add dummy data to it
     $.get("/api/messages", function(data) {
-        for (let i = 0; i < data.length; i++) {
-            var user = $('<h3>').text(data[i].userName);
-            var message = $('<p>').text(data[i].message);
-            $(".current-messages").append(user + ": " + message)
-        }
+        console.log(data)
+        // for (let i = 0; i < data.length; i++) {
+        //     var user = $('<h3>').text(data[i].userName);
+        //     var message = $('<p>').text(data[i].message);
+        //     $(".current-messages").append(user + ": " + message)
+        // }
     });
 
     //this is where I left off
