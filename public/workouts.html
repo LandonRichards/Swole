@@ -51,7 +51,6 @@
                     <th>Points Earned</th>
                 </thead>
                 <tbody id="workoutTable">
-                    
                 </tbody>
             </table>
         </div>
@@ -76,7 +75,7 @@ $(document).ready(function() {
             var dateTd = $('<td>').text(data[i].createdAt);
             var titleTd = $('<td>').text(data[i].workoutTitle);
             var pointsTd = $('<td>').text(data[i].points);
-            newWorkoutRow.append(dateTd,titleTd,pointsTd);
+            newWorkoutRow.append(dateTd, titleTd, pointsTd);
             $('#workoutTable').append(newWorkoutRow);
         }
     })
@@ -111,10 +110,15 @@ $('#submit').on('click', function() {
             workoutTitle: type,
             points: points
         }
-
+        $.ajax({
+                method: "PUT",
+                url: "/api/workouts",
+                data: newWorkout
+            })
+            
 
         $.post("/api/workouts", newWorkout);
-        $.put("/api/workouts", newWorkout);
+        $.ajax("/api/workouts", newWorkout);
         alert('Workout Added. Nice job!');
         location.reload();
     }
