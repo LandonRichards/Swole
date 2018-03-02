@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>My Workouts</title>
+    <title>My Homepage</title>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -101,7 +101,6 @@ $(document).ready(function() {
     });
 
     $.get("/api/leaders", function(data) {
-        console.log(data)
         for (let i = 0; i < data.length; i++) {
             var newLeaderRow = $('<tr>')
             var rankTd = $('<td>').text(i+1);
@@ -165,7 +164,6 @@ $('#submit').on('click', function() {
             url: "/api/users",
             data: updatePoints
         }).then(function() {
-            console.log('point updated')
         })
 
 
