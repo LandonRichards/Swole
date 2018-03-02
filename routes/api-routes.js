@@ -75,7 +75,7 @@ module.exports = function(app) {
     app.put("/api/users", function(req,res){
         console.log(req.body.points,req.body.userName)
         db.Users.update({
-            points: ++req.body.points
+            points: req.body.points
         }, {
             where: {
                 userName: req.body.userName
@@ -93,7 +93,11 @@ module.exports = function(app) {
             }
         }).then(function(user) {
             if (user) {
-                res.send(user.dataValues.userName)
+                var userInfo = {
+                    userName:user.dataValues.userName,
+                    points:user.dataValues.points
+                }
+                res.send(userInfo)
             } else {
                 console.log('No user found')
             };

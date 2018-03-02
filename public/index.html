@@ -68,11 +68,13 @@ $("#check-user").on('click', function() {
 
     $.post("/api/users", user).done(function(data) {
         //not sure how to get the obj Im trying to return in api-routes 
-        localStorage.setItem("username", data);
+        localStorage.setItem("username", data.userName);
+        localStorage.setItem("points", data.points)
+
 
 // Access some stored data
 
-        console.log(data)
+        console.log(data.userName,data.points)
         window.location.href = "/workouts";
     });
 
