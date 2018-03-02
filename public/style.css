@@ -14,10 +14,24 @@ ol,ul {
 	text-align: center;
 	margin-top: 2%;
 }
-.jumbotron {
+/* .jumbotron {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
 	background-size: cover;
+} */
+
+.jumbotron {
+	/* text-align: center; */
+    background: url("../data/resources/worksweatachieve.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
+.ibod {
+	background: url("../data/resources/barbell.jpg") no-repeat center center;
+}
+
+
 
 #smack{
 	width: 90%;
@@ -42,4 +56,12 @@ ol,ul {
 	height: 50px;
 	background-color: black;
 	color: white;
+}
+body {
+	color: gray;
+	background: url("../data/resources/barbell.jpg") no-repeat center center;
+	-webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
