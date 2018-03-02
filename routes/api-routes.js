@@ -34,7 +34,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/leaders", function(req, res) {
-        db.Workouts.findAll({
+        db.Users.findAll({
             order: [ [ 'points', 'DESC' ]]
         })
             .then(function(data) {

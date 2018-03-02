@@ -106,7 +106,7 @@ $(document).ready(function() {
             var newDate = data[i].createdAt.split('T');
             var newLeaderRow = $('<tr>')
             var dateTd = $('<td>').text(newDate[0]);
-            var userTd = $('<td>').text(data[i].workoutTitle);
+            var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
             newWorkoutRow.append(dateTd, titleTd, pointsTd);
             $('#workoutTable').append(newWorkoutRow);
