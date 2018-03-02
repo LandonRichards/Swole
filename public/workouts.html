@@ -127,13 +127,13 @@ $("#smack-submit").click(function() {
 
 $('#submit').on('click', function() {
     var userName = localStorage.getItem('username');
-
+    var currentPoints = localStorage.getItem('points')
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
         alert('There is an error with your submission')
     } else {
-        var points;
+        var currentPoints = currentPoints + points;
         switch (type) {
             case "Cardio":
                 points = mins * 2;
@@ -153,7 +153,7 @@ $('#submit').on('click', function() {
         var newWorkout = {
             userName: userName,
             workoutTitle: type,
-            points: points
+            points: currentPoints
         }
         $.ajax({
             method: "PUT",
