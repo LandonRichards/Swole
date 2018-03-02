@@ -1,9 +1,11 @@
 .col-sm-3 {
+
 	border: 12px solid black;
 }
 body {
 	background-color: #1C1C1C;
 }
+
 .col-sm-6 {
 	text-align: center;
 }
@@ -19,6 +21,7 @@ ol,ul {
 .jumbotron {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
 	background-size: cover;
+
 	height: 500px;
 }
 
@@ -63,6 +66,16 @@ ol,ul {
 	border: 2px solid black;
 	text-align: center;
 	margin-top: 2%;
+
+}
+
+#smack{
+	width: 90%;
+}
+
+.smack-mess {
+	border-bottom: 1px solid black;
+
 }
 
 #minutes{
@@ -81,7 +94,6 @@ ol,ul {
 	background-color: black;
 	color: white;
 }
-
 
 
 .navbar-brand { position: relative; z-index: 2; }
@@ -162,3 +174,4 @@ ol,ul {
 	height: 150px;
 	width: 150px;
 }
+

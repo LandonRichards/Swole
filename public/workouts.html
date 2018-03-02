@@ -15,22 +15,43 @@
             <h1 style="text-align: center">My Workouts</h1>
             <div class="panel panel-default">
                 <div class="panel-heading">
+
+                    <h3 class="leaderboard">Top 5 Most Swole</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>Last Workout</th>
+                        </thead>
+                        <tbody id="leaderTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
                     <h3 class="panel-title">Enter a workout</h3>
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" id="myWorkouts">
                         <select class="custom-select" id='addWorkout'>
                             <option selected>Choose Your Workout</option>
-                            <option value="cardio">Cardio</option>
-                            <option value="legs">Leg Day</option>
-                            <option value="arms">Upper body/Arms</option>
-                            <option value="core">Core Workout</option>
+
+                            <option value="Cardio">Cardio</option>
+                            <option value="Leg Day">Leg Day</option>
+                            <option value="Arms">Upper body/Arms</option>
+                            <option value="Core Workout">Core Workout</option>
+
                             <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
                         </select>
                         <button type="button" class="btn btn-primary" id="submit">Submit</button>
                     </form>
                 </div>
             </div>
+
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">
@@ -40,6 +61,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="panel panel-default">
             <!-- Default panel contents -->
@@ -51,37 +73,78 @@
                     <th>Title</th>
                     <th>Points Earned</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2/2/2015</td>
-                        <td>Cardio</td>
-                        <td>10</td>
-                    </tr>
+
+                <tbody id="workoutTable">
                 </tbody>
             </table>
         </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h2 class="mb">Smack Talk Message Board</h2>
+            </div>
+            <div class="panel-body">
+                <div class="current-messages">
+                </div>
+                <form class="form-inline" id="talk-smack">
+                    <input type="text" class="form-control" id="smack" aria-describedby="addSmack" placeholder="Talk some smack...">
+                    <button type="button" class="btn btn-primary" id="smack-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
-    //I am not sure if this will work, need to add dummy data to it
-    $.get('/api/messages',function(data){
-        for(let i = 0; i<data.length;i++){
-            var user = $('<h3>').text(data[i].userName);
-            var message = $('<p>').text(data[i].message);
-            $(".current-messages").append(user+ ": "+ message) 
+
+    var userName = localStorage.getItem('username');
+    $.get("/api/messages", function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message).addClass("smack-mess");
+            $(".current-messages").append(messageDiv)
+        }
+    });
+
+    $.get("/api/workouts/" + userName, function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var newDate = data[i].createdAt.split('T');
+            var newWorkoutRow = $('<tr>')
+            var dateTd = $('<td>').text(newDate[0]);
+            var titleTd = $('<td>').text(data[i].workoutTitle);
+            var pointsTd = $('<td>').text(data[i].points);
+            newWorkoutRow.append(dateTd, titleTd, pointsTd);
+            $('#workoutTable').append(newWorkoutRow);
+        };
+    });
+
+    $.get("/api/leaders/", function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var newDate = data[i].createdAt.split('T');
+            var newLeaderRow = $('<tr>')
+            var dateTd = $('<td>').text(newDate[0]);
+            var userTd = $('<td>').text(data[i].workoutTitle);
+            var pointsTd = $('<td>').text(data[i].points);
+            newWorkoutRow.append(dateTd, titleTd, pointsTd);
+            $('#workoutTable').append(newWorkoutRow);
         }
     })
-
-    //this is where I left off
-    // $.get('/api/workouts', function(data) {
-    //     for (let i = 0; i < data.length; i++) {
-
-    //     }
-    // })
 });
 
+$("#smack-submit").click(function() {
+    var userName = localStorage.getItem('username');
+    var message = $('#smack').val().trim();
+    var newMess = {
+        userName: userName,
+        message: message
+    };
+    $.post("/api/messages", newMess);
+    location.reload();
+})
+
 $('#submit').on('click', function() {
+    var userName = localStorage.getItem('username');
+
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
@@ -89,31 +152,43 @@ $('#submit').on('click', function() {
     } else {
         var points;
         switch (type) {
-            case "cardio":
+
+            case "Cardio":
                 points = mins * 2;
                 break;
-            case "legs":
+            case "Leg Day":
                 points = mins * 5;
                 break;
-            case "arms":
+            case "Arms":
                 points = mins * 5;
                 break;
-            case "core":
+            case "Core Workout":
+
                 points = mins * 7;
                 break;
             default:
                 break;
         };
-    }
-    var newWorkout = {
-        userName: "troe11",
-        workoutTitle: type,
-        points: points
-    }
-    $.post("/api/workouts", newWorkout);
 
-    alert('Workout Added. Nice job!');
-    location.reload();
+        var newWorkout = {
+            userName: userName,
+            workoutTitle: type,
+            points: points
+        }
+        $.ajax({
+            method: "PUT",
+            url: "/api/users",
+            data: newWorkout
+        }).then(function() {
+            console.log('point updated')
+        })
+
+
+        $.post("/api/workouts", newWorkout);
+        alert('Workout Added. Nice job!');
+        location.reload();
+    }
+
 })
 </script>
 

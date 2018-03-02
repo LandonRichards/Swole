@@ -5,6 +5,7 @@
     <title>SwoleMates! Find your workout buddy</title>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -14,10 +15,11 @@
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<body>
+
     <!-- ALL THE NAV BAR STUFF GOES HERE -->
     <!-- Second navbar for sign in -->
     <nav class="navbar navbar-default">
@@ -141,15 +143,21 @@ $("#sign-in").on('click', function(event) {
     var user = {
         userName: userName,
         passWord: passWord
+
     };
 
     //need to figure out how to check user name/pw on server side
 
-    $.post('/api/users/', user).done(function(response) {
+    $.post("/api/users", user).done(function(data) {
         //not sure how to get the obj Im trying to return in api-routes 
-        console.log(userName)
-        console.log(response)
-        window.location.href = "/workouts/";
+        localStorage.setItem("username", data);
+
+// Access some stored data
+
+        console.log(data)
+        window.location.href = "/workouts";
+
+     
     });
 
 
