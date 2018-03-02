@@ -127,7 +127,7 @@ $("#smack-submit").click(function() {
 
 $('#submit').on('click', function() {
     var userName = localStorage.getItem('username');
-    var currentPoints = localStorage.getItem('points')
+    var currentPoints = localStorage.getItem('points');
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
@@ -150,10 +150,11 @@ $('#submit').on('click', function() {
             default:
                 break;
         };
-        console.log(currentPoints,points)
+        var newTotal = currentPoints + points;
+        var currentPoints = localStorage.setItem('points',newTotal);
         var updatePoints = {
             userName:userName,
-            newPoints:currentPoints + points
+            newPoints:newTotal
         };
         var newWorkout = {
             userName: userName,
