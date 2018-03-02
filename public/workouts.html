@@ -100,7 +100,7 @@ $(document).ready(function() {
         };
     });
 
-    $.get("/api/leaders/", function(data) {
+    $.get("/api/leaders", function(data) {
         for (let i = 0; i < data.length; i++) {
             var newDate = data[i].createdAt.split('T');
             var newLeaderRow = $('<tr>')
