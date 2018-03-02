@@ -150,16 +150,18 @@ $('#submit').on('click', function() {
             default:
                 break;
         };
-        var currentPoints = currentPoints + points;
+        var updatePoints = {
+            newPoints:currentPoints + points
+        };
         var newWorkout = {
             userName: userName,
             workoutTitle: type,
-            points: currentPoints
+            points: points
         }
         $.ajax({
             method: "PUT",
             url: "/api/users",
-            data: newWorkout
+            data: updatePoints
         }).then(function() {
             console.log('point updated')
         })
