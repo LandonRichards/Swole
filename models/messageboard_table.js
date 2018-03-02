@@ -4,4 +4,5 @@ module.exports = function(sequelize,DataTypes){
 		message:DataTypes.STRING
 	});
 	return MessageBoards;
+
 }

@@ -61,11 +61,14 @@ $(document).ready(function() {
             password: password,
         };
 
+
         $.post("/api/user", newUser,function(){
+
             alert('You are one step closer to gettin\' SWOLE')
             window.location.href = "/homepage";
         });
     })
+
 
 });
 </script>
