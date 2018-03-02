@@ -15,7 +15,12 @@
             <h1 style="text-align: center">My Workouts</h1>
             <div class="panel panel-default">
                 <div class="panel-heading">
+<<<<<<< HEAD
                     <h3 class="leaderboard">Swolest of the Swole</h3>
+=======
+
+                    <h3 class="leaderboard">Top 5 Most Swole</h3>
+>>>>>>> 26d4d5e4db40375a049ca78ae1b1318955ccf8c4
                 </div>
                 <div class="panel-body">
                     <table class="table">
@@ -31,22 +36,40 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
+<<<<<<< HEAD
                     <h3 class="panel-title">Do you even lift</h3>
+=======
+
+                    <h3 class="panel-title">Enter a workout</h3>
+>>>>>>> 26d4d5e4db40375a049ca78ae1b1318955ccf8c4
                 </div>
                 <div class="panel-body">
                     <form class="form-inline" id="myWorkouts">
                         <select class="custom-select" id='addWorkout'>
                             <option selected>Choose Your Workout</option>
+
                             <option value="Cardio">Cardio</option>
                             <option value="Leg Day">Leg Day</option>
                             <option value="Arms">Upper body/Arms</option>
                             <option value="Core Workout">Core Workout</option>
+
                             <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
                         </select>
                         <button type="button" class="btn btn-primary" id="submit">Feel the burn</button>
                     </form>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <h2 class="mb">Smack Talk Message Board</h2>
+                    <div class="current-messages">
+                        
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="panel panel-default">
             <!-- Default panel contents -->
@@ -58,6 +81,7 @@
                     <th>Title</th>
                     <th>Points Earned</th>
                 </thead>
+
                 <tbody id="workoutTable">
                 </tbody>
             </table>
@@ -76,10 +100,12 @@
                 </form>
             </div>
         </div>
+
     </div>
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
+
     var userName = localStorage.getItem('username');
     $.get("/api/messages", function(data) {
         for (let i = 0; i < data.length; i++) {
@@ -126,6 +152,7 @@ $("#smack-submit").click(function() {
 
 $('#submit').on('click', function() {
     var userName = localStorage.getItem('username');
+
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
@@ -133,6 +160,7 @@ $('#submit').on('click', function() {
     } else {
         var points;
         switch (type) {
+
             case "Cardio":
                 points = mins * 2;
                 break;
@@ -143,11 +171,13 @@ $('#submit').on('click', function() {
                 points = mins * 5;
                 break;
             case "Core Workout":
+
                 points = mins * 7;
                 break;
             default:
                 break;
         };
+
         var newWorkout = {
             userName: userName,
             workoutTitle: type,
