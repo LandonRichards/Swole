@@ -107,7 +107,7 @@ $(document).ready(function() {
             var rankTd = $('<td>').text(i+1);
             var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newLeaderRow.append(ranktd,userTd, pointsTd);
+            newLeaderRow.append(rankTd,userTd, pointsTd);
             $('#leaderTable').append(newLeaderRow);
         }
     })
