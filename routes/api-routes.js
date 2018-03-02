@@ -33,18 +33,19 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/leaders", function(req, res) {
-        db.Workouts.sum({
-            limit:5,
-            group: 'userName'
-        })
-            .then(function(data) {
-                res.json(data)
-            }).catch(function(err){
-            console.log(err)
-            res.json(err)
-        });
-    });
+    // app.get("/api/leaders", function(req, res) {
+    //     db.Workouts.sum({
+    //         where:{}
+    //         limit:5,
+    //         group: 'userName'
+    //     })
+    //         .then(function(data) {
+    //             res.json(data)
+    //         }).catch(function(err){
+    //         console.log(err)
+    //         res.json(err)
+    //     });
+    // });
 
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({

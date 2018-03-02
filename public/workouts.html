@@ -15,7 +15,7 @@
             <h1 style="text-align: center">My Workouts</h1>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="leaderboard">Top 5 Most Swole</h3>
+                    <h3 class="leaderboard">Swolest of the Swole</h3>
                 </div>
                 <div class="panel-body">
                     <table class="table">
@@ -100,17 +100,18 @@ $(document).ready(function() {
         };
     });
 
-    $.get("/api/leaders", function(data) {
-        for (let i = 0; i < data.length; i++) {
-            var newDate = data[i].createdAt.split('T');
-            var newLeaderRow = $('<tr>')
-            var dateTd = $('<td>').text(newDate[0]);
-            var userTd = $('<td>').text(data[i].workoutTitle);
-            var pointsTd = $('<td>').text(data[i].points);
-            newWorkoutRow.append(dateTd, titleTd, pointsTd);
-            $('#workoutTable').append(newWorkoutRow);
-        }
-    })
+    // $.get("/api/leaders", function(data) {
+    //     console.log(data)
+        // for (let i = 0; i < data.length; i++) {
+        //     var newDate = data[i].createdAt.split('T');
+        //     var newLeaderRow = $('<tr>')
+        //     var dateTd = $('<td>').text(newDate[0]);
+        //     var userTd = $('<td>').text(data[i].workoutTitle);
+        //     var pointsTd = $('<td>').text(data[i].points);
+        //     newWorkoutRow.append(dateTd, titleTd, pointsTd);
+        //     $('#workoutTable').append(newWorkoutRow);
+        // }
+    // })
 });
 
 $("#smack-submit").click(function() {
