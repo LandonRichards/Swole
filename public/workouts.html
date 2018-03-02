@@ -133,7 +133,7 @@ $('#submit').on('click', function() {
     if (mins !== mins * 1 || type == "Choose Your Workout") {
         alert('There is an error with your submission')
     } else {
-        var currentPoints = currentPoints + points;
+        
         switch (type) {
             case "Cardio":
                 points = mins * 2;
@@ -150,6 +150,7 @@ $('#submit').on('click', function() {
             default:
                 break;
         };
+        var currentPoints = currentPoints + points;
         var newWorkout = {
             userName: userName,
             workoutTitle: type,
