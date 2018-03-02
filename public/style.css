@@ -1,4 +1,54 @@
 .col-sm-3 {
+	border: 12px solid black;
+}
+body {
+	background-color: #1C1C1C;
+}
+.col-sm-6 {
+	text-align: center;
+}
+
+ol,ul {
+	font-size: 24px;
+}
+#MB {
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 2%;
+}
+.jumbotron {
+	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
+	background-size: cover;
+	height: 500px;
+}
+
+#needspadding {
+	padding: 5px;
+}
+
+#needspadding2 {
+	padding: 1px;
+}
+
+	
+
+#minutes{
+	max-width: 150px;
+}
+
+#addWorkout, #minutes {
+	margin-right: 5%; 
+}
+#submit {
+	background-color: black;
+}
+#addWorkout {
+	width: 250px;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+.col-sm-3 {
 	border: 2px solid black;
 }
 
@@ -36,7 +86,7 @@ ol,ul {
 
 .navbar-brand { position: relative; z-index: 2; }
 
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 10px 20px; margin: 5px auto; transition: transform 0.3s; }
 
 .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
@@ -98,9 +148,10 @@ ol,ul {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 250px;
   /* Set the fixed height of the footer here */
-  height: 180px;
-  background-color: #f2b8c2;
+  
+  background-color: #1C1C1C;
   /* color overlay */ 
   
     /* image to overlay */
