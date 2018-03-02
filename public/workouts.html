@@ -108,8 +108,8 @@ $(document).ready(function() {
             var dateTd = $('<td>').text(newDate[0]);
             var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newWorkoutRow.append(dateTd, titleTd, pointsTd);
-            $('#workoutTable').append(newWorkoutRow);
+            newLeaderRow.append(dateTd, titleTd, pointsTd);
+            $('#workoutTable').append(newLeaderRow);
         }
     })
 });
