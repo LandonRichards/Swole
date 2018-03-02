@@ -21,8 +21,7 @@ ol,ul {
 /* .jumbotron {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
 	background-size: cover;
-<<<<<<< HEAD
-} */
+
 
 .jumbotron {
 	/* text-align: center; */
@@ -30,55 +29,8 @@ ol,ul {
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-=======
-
-	height: 500px;
+	background-size: 100% 100%;
 }
-
-#needspadding {
-	padding: 5px;
-}
-
-#needspadding2 {
-	padding: 1px;
-}
-
-	
-
-#minutes{
-	max-width: 150px;
-}
-
-#addWorkout, #minutes {
-	margin-right: 5%; 
-}
-#submit {
-	background-color: black;
-}
-#addWorkout {
-	width: 250px;
-	height: 50px;
-	background-color: black;
-	color: white;
-}
-.col-sm-3 {
-	border: 2px solid black;
-}
-
-.col-sm-6 {
-	text-align: center;
-}
-
-ol,ul {
-	font-size: 24px;
-}
-#MB {
-	border: 2px solid black;
-	text-align: center;
-	margin-top: 2%;
-
->>>>>>> 26d4d5e4db40375a049ca78ae1b1318955ccf8c4
 }
 .ibod {
 	background: url("../data/resources/barbell.jpg") no-repeat center center;
