@@ -33,6 +33,19 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/leaders", function(req, res) {
+        db.MessageBoards.findAll({
+            limit:5,
+            
+        })
+            .then(function(data) {
+                res.json(data)
+            }).catch(function(err){
+            console.log(err)
+            res.json(err)
+        });
+    });
+
     app.get("/api/workouts/:userName", function(req,res){
         db.Workouts.findAll({
             limit:10,
