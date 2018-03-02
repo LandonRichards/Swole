@@ -35,6 +35,7 @@ module.exports = function(app) {
 
     app.get("/api/leaders", function(req, res) {
         db.Users.findAll({
+            limit:5,
             order: [ [ 'points', 'DESC' ]]
         })
             .then(function(data) {
