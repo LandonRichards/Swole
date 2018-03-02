@@ -108,7 +108,7 @@ $(document).ready(function() {
             var dateTd = $('<td>').text(newDate[0]);
             var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newLeaderRow.append(dateTd, titleTd, pointsTd);
+            newLeaderRow.append(dateTd, userTd, pointsTd);
             $('#workoutTable').append(newLeaderRow);
         }
     })
