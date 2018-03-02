@@ -150,7 +150,7 @@ $('#submit').on('click', function() {
             default:
                 break;
         };
-        var newTotal = currentPoints + points;
+        var newTotal = parseInt(currentPoints) + parseInt(points);
         var currentPoints = localStorage.setItem('points',newTotal);
         var updatePoints = {
             userName:userName,
