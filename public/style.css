@@ -1,0 +1,149 @@
+.col-sm-3 {
+
+	border: 12px solid black;
+}
+body {
+	background-color: #1C1C1C;
+}
+
+.col-sm-6 {
+	text-align: center;
+}
+
+ol,ul {
+	font-size: 24px;
+}
+#MB {
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 2%;
+}
+.jumbotron {
+	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
+	background-size: cover;
+
+	height: 500px;
+}
+
+#needspadding {
+	padding: 5px;
+}
+
+#needspadding2 {
+	padding: 1px;
+}
+
+	
+
+#minutes{
+	max-width: 150px;
+}
+
+#addWorkout, #minutes {
+	margin-right: 5%; 
+}
+#submit {
+	background-color: black;
+}
+#addWorkout {
+	width: 250px;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+.col-sm-3 {
+	border: 2px solid black;
+}
+
+.col-sm-6 {
+	text-align: center;
+}
+
+ol,ul {
+	font-size: 24px;
+}
+#MB {
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 2%;
+
+}
+
+#smack{
+	width: 90%;
+}
+
+.smack-mess {
+	border-bottom: 1px solid black;
+
+}
+
+#minutes{
+	max-width: 150px;
+}
+
+#addWorkout, #minutes {
+	margin-right: 5%; 
+}
+#submit {
+	background-color: black;
+}
+#addWorkout {
+	width: 250px;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+
+
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 10px 20px; margin: 5px auto; transition: transform 0.3s; }
+
+.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+  /* Set the fixed height of the footer here */
+  
+  background-color: #1C1C1C;
+  /* color overlay */ 
+  
+    /* image to overlay */
+}
+
+#images {
+	height: 150px;
+	width: 150px;
+}
