@@ -10,11 +10,70 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
+
+          <!-- ALL THE NAV BAR STUFF GOES HERE -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar navbar-default">
         <div class="container">
-            <h1 class="display-4">Sign up to get Swole!</h1>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="https://www.youtube.com/watch?v=McSORXpvZlw">#Swolemate Enterprises</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Workouts</a></li>
+                    <li><a href="#">Scoreboard</a></li>
+                    <li>
+                        <form>
+                            <div id="needspadding">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding">
+                                <input type="password" class="form-control" id="passWord" placeholder="Password">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding2">
+                                <button type="submit" id="sign-in" class="btn btn-primary .btn-group-lg">Submit</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+                </form>
+                <!--                 <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
+                    <form class="navbar-form navbar-right form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="Email">Email</label>
+                            <input type="email" class="form-control" id="username" placeholder="Email" autofocus required />
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="Password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required />
+                        </div>
+                        <button id="#sign-in" type="button" class="btn btn-success">Sign in</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /.navbar-collapse
         </div>
-    </div>
+        <!-- /.container -->
+    </nav>
+    <div id="builduser">
     <form id="build-user">
         <div class="container">
             <div class="form-group">
@@ -41,6 +100,38 @@
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     </div>
+    
+
+           <!--  ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  --> 
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <h3 class="footertext">About Us:</h3>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/23384286?s=400&v=4" class="img-circle" height="42" width="42" alt="the-brains">
+                            <h4 class="footertext"><a href="https://github.com/troe11">Travis</h4></a>
+                            <p class="footertext">Heroku God
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars0.githubusercontent.com/u/30741663?s=400&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/Lexdexic">LexDexic</a></h4>
+                            <p class="footertext">Might be a cat.
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/31899881?s=400&u=d6fa7913f8d4c2d5dd6d5799218474b023118821&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/landonrichards">Landon</h4></a>
+                            <p class="footertext">You cant code from Texas.
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END OF FOOTER BACK TO REGULARLY SCHEDULED PROGRAMMING -->
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -61,86 +152,15 @@ $(document).ready(function() {
             password: password,
         };
 
-        $.post("/api/user/", newUser,function(){
+
+        $.post("/api/user", newUser, function() {
+
             alert('You are one step closer to gettin\' SWOLE')
             window.location.href = "/homepage";
         });
     })
 
-    // var authorList = $("tbody");
-    // var authorContainer = $(".author-container");
-    // Adding event listeners to the form to create a new object, and the button to delete
-    // an Author
-//     $(document).on("submit", "#swoleform", handleSwoleFormSubmit);
-//     $(document).on("click", ".delete-author", handleDeleteButtonPress);
-//     // Getting the intiial list of Authors
-//     getSwoleBuddies();
-//     // A function to handle what happens when the form is submitted to create a new Author
-//     function handleSwoleFormSubmit(event) {
-//         event.preventDefault();
-//         // Don't do anything if the name fields hasn't been filled out
-//         if (!firstName.val().trim().trim()) {
-//             return;
-//         }
-//         // Calling the upsertAuthor function and passing in the value of the name input
-//         // addSwoleBuddy({
-//         //   firstName: firstName
-//         //   lastName: lastName
-//         //   emailAddress: emailAddress
-//         //   userName: userName
-//         //   password: password
-//         //     .val()
-//         //     .trim()
-//         // });
-//     }
-//     // A function for creating an author. Calls getAuthors upon completion
-//     // function addSwoleBuddy(swoleData) {
-//     //   $.post("/api/authors", swoleData)
-//     //     .then(swoleData);
-//     // }
-//     // Function for creating a new list row for authors
-//     //   function createAuthorRow(swoleData) {
-//     //     var newTr = $("<tr>");
-//     //     newTr.data("author", swoleData);
-//     //     newTr.append("<td>" + swoleData.name + "</td>");
-//     //     return newTr;
-//     //   }
-//     // //   // Function for retrieving authors and getting them ready to be rendered to the page
-//     //   function getAuthors() {
-//     //     $.get("/api/authors", function(data) {
-//     //       renderAuthorList(data.map(x => createAuthorRow(x))) //this .map takes the value x and then runs renderauthorlist
-//     //       nameInput.val(""); // empties the search bar our
-//     //     });
-//     //   }
-//     // //   // A function for rendering the list of authors to the page
-//     //   function renderAuthorList(rows) {
-//     //     authorList.children().not(":last").remove();
-//     //     authorContainer.children(".alert").remove();
-//     //     if (rows.length) {
-//     //       console.log(rows);
-//     //       authorList.prepend(rows);
-//     //     }
-//     //     else {
-//     //       renderEmpty();
-//     //     }
-//     //   }
-//     // Function for handling what to render when there are no authors
-//     function renderEmpty() {
-//         var alertDiv = $("<div>");
-//         alertDiv.addClass("alert alert-danger");
-//         alertDiv.text("You must create an Swole buddy before you can create a Post.");
-//         authorContainer.append(alertDiv);
-//     }
-//     // Function for handling what happens when the delete button is pressed
-//     function handleDeleteButtonPress() {
-//         var listItemData = $(this).parent("td").parent("tr").data("author");
-//         var id = listItemData.id;
-//         $.ajax({
-//                 method: "DELETE",
-//                 url: "/api/swoleData/" + id
-//             })
-//             .then(getSwoleBuddies);
-//     }
+
 });
 </script>
 
