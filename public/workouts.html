@@ -96,20 +96,18 @@ $(document).ready(function() {
             var titleTd = $('<td>').text(data[i].workoutTitle);
             var pointsTd = $('<td>').text(data[i].points);
             newWorkoutRow.append(dateTd, titleTd, pointsTd);
-            $('#leaderTable').append(newWorkoutRow);
+            $('#workoutTable').append(newWorkoutRow);
         };
     });
 
     $.get("/api/leaders", function(data) {
         console.log(data)
         for (let i = 0; i < data.length; i++) {
-            var newDate = data[i].createdAt.split('T');
             var newLeaderRow = $('<tr>')
-            var dateTd = $('<td>').text(newDate[0]);
             var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newLeaderRow.append(dateTd, userTd, pointsTd);
-            $('#workoutTable').append(newLeaderRow);
+            newLeaderRow.append(userTd, pointsTd);
+            $('#leaderTable').append(newLeaderRow);
         }
     })
 });
