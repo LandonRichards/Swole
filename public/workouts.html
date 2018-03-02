@@ -104,10 +104,10 @@ $(document).ready(function() {
         console.log(data)
         for (let i = 0; i < data.length; i++) {
             var newLeaderRow = $('<tr>')
-            var rankTd = i+1
+            var rankTd = i+1;
             var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newLeaderRow.append(userTd, pointsTd);
+            newLeaderRow.append(ranktd,userTd, pointsTd);
             $('#leaderTable').append(newLeaderRow);
         }
     })
