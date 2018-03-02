@@ -64,7 +64,7 @@ $(document).ready(function() {
         localStorage.setItem("points", 0);
         $.post("/api/user", newUser,function(){
             alert('You are one step closer to gettin\' SWOLE')
-            window.location.href = "/homepage";
+            window.location.href = "/workouts";
         });
     })
 
