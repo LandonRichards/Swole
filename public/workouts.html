@@ -150,9 +150,11 @@ $('#submit').on('click', function() {
             default:
                 break;
         };
+        var newPoints = currentPoints + points;
+
         var updatePoints = {
-            newPoints:currentPoints + points,
-            userName:userName
+            userName:userName,
+            newPoints:newPoints
         };
         var newWorkout = {
             userName: userName,
