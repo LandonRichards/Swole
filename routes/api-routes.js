@@ -34,9 +34,9 @@ module.exports = function(app) {
     });
 
     app.get("/api/leaders", function(req, res) {
-        db.MessageBoards.findAll({
+        db.Workouts.sum({
             limit:5,
-            
+            group: 'userName'
         })
             .then(function(data) {
                 res.json(data)
