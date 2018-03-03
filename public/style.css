@@ -4,14 +4,15 @@
 body {
 	background-color: #1C1C1C;
 }
+
+#workoutpage {
+ background-color: #696e77;
+}
+
 .col-sm-6 {
 	text-align: center;
 }
-#builduser {
-    text-align: center;
-    height: 400px;
-    margin: 0 auto -142px;
-}
+
 ol,ul {
 	font-size: 24px;
 }
@@ -24,6 +25,8 @@ ol,ul {
 	background-image: url("https://t4.ftcdn.net/jpg/00/98/97/89/240_F_98978930_Qq4AZDC7l7FjNCVvkmIRIWESYnYb6poM.jpg");
 	background-size: cover;
 	height: 500px;
+	background-color: #1C1C1C
+
 }
 
 #needspadding {
@@ -67,6 +70,16 @@ ol,ul {
 	border: 2px solid black;
 	text-align: center;
 	margin-top: 2%;
+
+}
+
+#smack{
+	width: 90%;
+}
+
+.smack-mess {
+	border-bottom: 1px solid black;
+
 }
 
 #minutes{
@@ -91,6 +104,7 @@ ol,ul {
 .navbar-brand { position: relative; z-index: 2; }
 
 .navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 1px 2px; margin: 5px auto; transition: transform 0.3s; }
+
 
 .navbar .navbar-collapse { position: relative; overflow: hidden !important; }
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
@@ -152,11 +166,11 @@ ol,ul {
   bottom: 0;
   width: 100%;
   height: 120px;
+
   /* Set the fixed height of the footer here */
   
   background-color: #1C1C1C;
   /* color overlay */ 
-  
 }
 
 #images {

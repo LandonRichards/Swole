@@ -1,7 +1,7 @@
 module.exports = function(sequelize,DataTypes){
-	var STMB = sequelize.define('MessageBoard',{
+	var MessageBoards = sequelize.define('MessageBoards',{
 		userName:DataTypes.STRING,
 		message:DataTypes.STRING
 	});
-	return STMB;
+	return MessageBoards;
 }

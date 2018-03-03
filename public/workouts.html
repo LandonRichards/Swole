@@ -2,48 +2,104 @@
 <html>
 
 <head>
-    <title>My Workouts</title>
+    <title>My Homepage</title>
 </head>
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style type="text/css">
+   body { background: #1C1C1C !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
 
 <body>
+
+              <!-- ALL THE NAV BAR STUFF GOES HERE -->
+    <!-- Second navbar for sign in -->
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="https://www.youtube.com/watch?v=McSORXpvZlw">#Swolemate Enterprises</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="workouts">Home</a></li>
+                    <li><a href="workouts">Leaderboard</a></li>
+                    <li><a href="signup">Sign up</a></li>
+                    <li>
+                        <form>
+                            <div id="needspadding">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding">
+                                <input type="password" class="form-control" id="passWord" placeholder="Password">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding2">
+                                <button type="submit" id="sign-in" class="btn btn-primary .btn-group-lg">Submit</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+                </form>
+
+    </nav>
     <div class="container">
         <div class=“jumbotron”>
-            <h1 style="text-align: center">My Workouts</h1>
-            <div class="panel panel-default">
+            <div id="workoutpage" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="leaderboard">Swolest of the Swole</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                        </thead>
+                        <tbody id="leaderTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="workoutpage"  class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Enter a workout</h3>
                 </div>
-                <div class="panel-body">
+                <div id="workoutpage" class="panel-body">
                     <form class="form-inline" id="myWorkouts">
                         <select class="custom-select" id='addWorkout'>
                             <option selected>Choose Your Workout</option>
-                            <option value="cardio">Cardio</option>
-                            <option value="legs">Leg Day</option>
-                            <option value="arms">Upper body/Arms</option>
-                            <option value="core">Core Workout</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Leg Day">Leg Day</option>
+                            <option value="Arms">Upper body/Arms</option>
+                            <option value="Core Workout">Core Workout</option>
                             <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
                         </select>
                         <button type="button" class="btn btn-primary" id="submit">Submit</button>
                     </form>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <h2 class="mb">Smack Talk Message Board</h2>
-                </div>
-                <div class="panel-body">
-                    <div class="current-messages">
-                        <p>hello</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <div class="panel panel-default">
+        <div id="workoutpage"  id="workoutpage"  class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">My Workouts</div>
             <!-- Table -->
@@ -53,38 +109,108 @@
                     <th>Title</th>
                     <th>Points Earned</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>2/2/2015</td>
-                        <td>Cardio</td>
-                        <td>10</td>
-                    </tr>
+                <tbody id="workoutTable">
                 </tbody>
             </table>
         </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div id="workoutpage"  class="panel-heading">
+                <h2 class="mb">Smack Talk Message Board</h2>
+            </div>
+            <div class="panel-body">
+                <div class="current-messages">
+                </div>
+                <form class="form-inline" id="talk-smack">
+                    <input type="text" class="form-control" id="smack" aria-describedby="addSmack" placeholder="Talk some smack...">
+                    <button type="button" class="btn btn-primary" id="smack-submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
+
+        <!--  ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  --> 
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <h3 class="footertext">About Us:</h3>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/23384286?s=400&v=4" class="img-circle" height="42" width="42" alt="the-brains">
+                            <h4 class="footertext"><a href="https://github.com/troe11">Travis</h4></a>
+                            <p class="footertext">Heroku God
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars0.githubusercontent.com/u/30741663?s=400&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/Lexdexic">LexDexic</a></h4>
+                            <p class="footertext">Might be a cat.
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/31899881?s=400&u=d6fa7913f8d4c2d5dd6d5799218474b023118821&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/landonrichards">Landon</h4></a>
+                            <p class="footertext">You cant code from Texas.
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END OF FOOTER BACK TO REGULARLY SCHEDULED PROGRAMMING -->
 </body>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
-    //I am not sure if this will work, need to add dummy data to it
-    $.get('/api/messages/', function(data) {
+
+    var userName = localStorage.getItem('username');
+    $.get("/api/messages", function(data) {
         for (let i = 0; i < data.length; i++) {
-            var user = $('<h3>').text(data[i].userName);
-            var message = $('<p>').text(data[i].message);
-            $(".current-messages").append(user + ": " + message)
+            var messageDiv = $('<div>').text(data[i].userName + ": " + data[i].message).addClass("smack-mess");
+            $(".current-messages").append(messageDiv)
+        }
+    });
+
+    $.get("/api/workouts/" + userName, function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var newDate = data[i].createdAt.split('T');
+            var newWorkoutRow = $('<tr>')
+            var dateTd = $('<td>').text(newDate[0]);
+            var titleTd = $('<td>').text(data[i].workoutTitle);
+            var pointsTd = $('<td>').text(data[i].points);
+            newWorkoutRow.append(dateTd, titleTd, pointsTd);
+            $('#workoutTable').append(newWorkoutRow);
+        };
+    });
+
+    $.get("/api/leaders", function(data) {
+        for (let i = 0; i < data.length; i++) {
+            var newLeaderRow = $('<tr>')
+            var rankTd = $('<td>').text(i+1);
+            var userTd = $('<td>').text(data[i].userName);
+            var pointsTd = $('<td>').text(data[i].points);
+            newLeaderRow.append(rankTd,userTd, pointsTd);
+            $('#leaderTable').append(newLeaderRow);
         }
     })
-
-    // $.get("/api/workouts/", function(data){
-    //     for(let i = 0; i < data.length; i++){
-    //         //loop through to make rows of workouts
-
-    //     }
-    // })
-
 });
 
+$("#smack-submit").click(function() {
+    var userName = localStorage.getItem('username');
+    var message = $('#smack').val().trim();
+    var newMess = {
+        userName: userName,
+        message: message
+    };
+    $.post("/api/messages", newMess);
+    location.reload();
+})
+
 $('#submit').on('click', function() {
+    var userName = localStorage.getItem('username');
+    var currentPoints = localStorage.getItem('points');
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
@@ -92,31 +218,47 @@ $('#submit').on('click', function() {
     } else {
         var points;
         switch (type) {
-            case "cardio":
+            case "Cardio":
+                points = mins;
+                break;
+            case "Leg Day":
                 points = mins * 2;
                 break;
-            case "legs":
-                points = mins * 5;
+            case "Arms":
+                points = mins * 2;
                 break;
-            case "arms":
-                points = mins * 5;
-                break;
-            case "core":
-                points = mins * 7;
+            case "Core Workout":
+                points = mins * 3;
                 break;
             default:
                 break;
         };
+        var newTotal = parseInt(currentPoints) + parseInt(points);
+        var currentPoints = localStorage.setItem('points',newTotal);
+        var updatePoints = {
+            userName:userName,
+            newPoints:newTotal
+        };
+        var newWorkout = {
+            userName: userName,
+            workoutTitle: type,
+            points: points
+        }
+        $.ajax({
+            method: "PUT",
+            url: "/api/users",
+            data: updatePoints
+        }).then(function() {
+        })
+
+
+        $.post("/api/workouts", newWorkout);
+        alert('Workout Added. Nice job!');
+        location.reload();
     }
-    var newWorkout = {
-        // userName: //you need to push this from when you sign in,
-        workoutTitle: type,
-        points: points
-    }
+
     $.post("/api/workouts/", newWorkout);
 
-    alert('Workout Added. Nice job!');
-    location.reload();
 })
 </script>
 

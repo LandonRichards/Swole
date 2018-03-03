@@ -3,76 +3,155 @@
 
 <head>
     <title>SwoleMates! Find your workout buddy</title>
-</head>
+    <link rel="stylesheet" href="style.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+</head>
+    <style type="text/css">
+   body { background: #1C1C1C !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
 <body>
+    <!-- ALL THE NAV BAR STUFF GOES HERE -->
+    <!-- Second navbar for sign in -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="https://youtu.be/McSORXpvZlw?t=54">#Swolemate Enterprises</a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="signup">Home</a></li>
+                    <li><a href="workouts">Workouts</a></li>
+                    <li><a href="workouts">Scoreboard</a></li>
+                    <li>
+                        <form>
+                            <div id="needspadding">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding">
+                                <input type="password" class="form-control" id="passWord" placeholder="Password">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <div id="needspadding2">
+                                <button type="submit" id="sign-in" class="btn btn-primary .btn-group-lg">Submit</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+                </form>
+                <!--                 <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
+                    <form class="navbar-form navbar-right form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="Email">Email</label>
+                            <input type="email" class="form-control" id="username" placeholder="Email" autofocus required />
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="Password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required />
+                        </div>
+                        <button id="#sign-in" type="button" class="btn btn-success">Sign in</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /.navbar-collapse
+        </div>
+        <!-- /.container -->--> -->
+    </nav>
+    <!-- /.navbar -->
+    <!--     THIS IS THE END OF THE NAV BAR STUFF -->
+    <div class="builduser">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Find your SwoleMate!</h1>
-            <p class="lead">A description for this app, no more than 1 or 2 lines</p>
+            <p class="lead">Have you ever wanted that perfect someone to lift with? Look no further!</p>
         </div>
-    </div>
-    <div id="description">
-        <h2>Earn points by working your ass off, beat your buddy and climb the leaderboard. Are you ready to get those gains?</h2>
-    </div>
-    <br>
-    <div id="buttons">
-        <button id="sign-up"><a href="/signup">Sign Up</a></button>
-        <button id="sign-in">Sign In</button>
-    </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Enter Username and PW</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="enter-login">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="username">
-                        </div>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon2" id="password">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="check-user">Sign In</button>
+        <div id="buttons">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <a href="signup" class="btn btn-primary btn-lg active" role="button">Click here to begin your Fitness Journey</a>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        </div>
+        <br>
+
+        <!-- 
+    ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <h3 class="footertext">About Us:</h3>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/23384286?s=400&v=4" class="img-circle" height="42" width="42" alt="the-brains">
+                            <h4 class="footertext"><a href="https://github.com/troe11">Travis</h4></a>
+                            <p class="footertext">Heroku God
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars0.githubusercontent.com/u/30741663?s=400&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/Lexdexic">LexDexic</a></h4>
+                            <p class="footertext">Might be a cat.
+                        </center>
+                    </div>
+                    <div class="col-md-4">
+                        <center>
+                            <img id="users" src="https://avatars1.githubusercontent.com/u/31899881?s=400&u=d6fa7913f8d4c2d5dd6d5799218474b023118821&v=4" class="img-circle" height="42" width="42" alt="...">
+                            <h4 class="footertext"><a href="https://github.com/landonrichards">Landon</h4></a>
+                            <p class="footertext">You cant code from Texas.
+                        </center>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- END OF FOOTER BACK TO REGULARLY SCHEDULED PROGRAMMING -->
 </body>
+
+</html>
 <script type="text/javascript">
-$("#sign-in").on('click', function() {
-    $('#myModal').modal('show');
-})
-
-$("#check-user").on('click', function() {
-    var userName = $("#username").val().trim();
-    var password = $("#password").val().trim();
-
+$("#sign-in").on('click', function(event) {
+    console.log("I have been clicked")
+    event.preventDefault()
+    var userName = $("#userName").val().trim();
+    var passWord = $("#passWord").val().trim();
+    console.log(userName)
     var user = {
         userName: userName,
-        password: password
+        passWord: passWord
     };
 
     //need to figure out how to check user name/pw on server side
 
-    $.post('/api/users/', user).done(function() {
-        //not sure how to get the obj I'm trying to return in api-routes 
+    $.post('/api/users/', user).done(function(response) {
+        //not sure how to get the obj Im trying to return in api-routes 
         console.log(userName)
-        window.location.href = "/workouts";
+        console.log(response)
+        window.location.href = "/workouts/";
     });
 
 
 })
 </script>
+
 
 </html>
