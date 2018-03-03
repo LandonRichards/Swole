@@ -19,12 +19,15 @@ To build a social fitness app that would:
 Development Cycle:
     Initially we wanted to have a way to track a workout and compare it in our database with another workout of a different user. We also wanted to have a leaderboard which would populate current workout stats.  Along with that we wanted to be able to post some encouraging trash talk. We had a lot of ideas and a lot of passion.
     We wanted to deploy this using Heroku, so naturally we built every thin there. This gave us numerous issues. In hind sight we should have built a local host first, then attempted to include Heroku. Every change to the code required a new Git commit before it could be viewed. With most of our time being focused on Heroku we quickly began trimming the app down. We focused on just tracking work outs and flushed the rest out from there. The only feature left out was finding a new work out buddy. 
-  
--NodeJS
--Express
--MySQL
--Sequelize
- --get routs
- --post routs
-Heroku
--Jaws 
+Technologies we included: 
+NodeJS,
+Express,
+MySQL,
+Sequelize,
+ -get routs,
+ -post routs,
+Heroku,
+Jaws,
+
+Google Slide Link:
+https://docs.google.com/presentation/d/10thJ2MHE8z1WF5MgSCzah4DbpR6f4PpKqVq_VievzDA/edit?usp=sharing
