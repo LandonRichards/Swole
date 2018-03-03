@@ -5,9 +5,9 @@
 #SWOLE fitness app
 Brought to you by  "Less than 4 Lines"
 The team:
-Travis Roemhild   <https://github.com/troe11>, 
-Landon Richards <https://github.com/LandonRichards>, 
-Jeremy Andersen <https://github.com/Lexdexic>, 
+ Travis Roemhild   <https://github.com/troe11>, 
+ Landon Richards <https://github.com/LandonRichards>, 
+ Jeremy Andersen <https://github.com/Lexdexic>, 
 
 The Goal:
 To build a social fitness app that would:
