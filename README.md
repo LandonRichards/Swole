@@ -1,7 +1,7 @@
 # Swole
 #SWOLETEAMSIX
 # get swole
-+++++++++++++++++++++++++++++++++++++++++++++++++++++=
+
 #SWOLE fitness app
 Brought to you by  "Less than 4 Lines"
 
