@@ -23,11 +23,13 @@ Technologies we included:
 NodeJS,
 Express,
 MySQL,
-Sequelize,
- -get routs,
- -post routs,
+Sequelize;
+ get routs,
+ post routs,
 Heroku,
 Jaws,
+Beautify
+
 
 Google Slide Link:
 https://docs.google.com/presentation/d/10thJ2MHE8z1WF5MgSCzah4DbpR6f4PpKqVq_VievzDA/edit?usp=sharing
