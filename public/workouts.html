@@ -2,17 +2,21 @@
 <html>
 
 <head>
-    <title>My Workouts</title>
+    <title>My Homepage</title>
 </head>
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style type="text/css">
+   body { background: #1C1C1C !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
 
 <body>
 
-           <!-- ALL THE NAV BAR STUFF GOES HERE -->
+              <!-- ALL THE NAV BAR STUFF GOES HERE -->
     <!-- Second navbar for sign in -->
+
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,9 +32,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-2">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Workouts</a></li>
-                    <li><a href="#">Scoreboard</a></li>
+                    <li><a href="workouts">Home</a></li>
+                    <li><a href="workouts">Leaderboard</a></li>
+                    <li><a href="signup">Sign up</a></li>
                     <li>
                         <form>
                             <div id="needspadding">
@@ -55,81 +59,47 @@
                 </ul>
                 </div>
                 </form>
-                <!--                 <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
-                    <form class="navbar-form navbar-right form-inline" role="form">
-                        <div class="form-group">
-                            <label class="sr-only" for="Email">Email</label>
-                            <input type="email" class="form-control" id="username" placeholder="Email" autofocus required />
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="Password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" required />
-                        </div>
-                        <button id="#sign-in" type="button" class="btn btn-success">Sign in</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /.navbar-collapse
-        </div>
-        <!-- /.container -->
+
     </nav>
     <div class="container">
         <div class=“jumbotron”>
-            <h1 style="text-align: center">My Workouts</h1>
-            <div class="panel panel-default">
+            <div id="workoutpage" class="panel panel-default">
                 <div class="panel-heading">
-
                     <h3 class="leaderboard">Swolest of the Swole</h3>
-
                 </div>
                 <div class="panel-body">
                     <table class="table">
                         <thead>
+                            <th>Rank</th>
                             <th>Name</th>
                             <th>Points</th>
-                            <th>Last Workout</th>
                         </thead>
                         <tbody id="leaderTable">
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div id="workoutpage"  class="panel panel-default">
                 <div class="panel-heading">
-
-                    <h3 class="panel-title">Do you even lift</h3>
-
                     <h3 class="panel-title">Enter a workout</h3>
                 </div>
-                <div class="panel-body">
+                <div id="workoutpage" class="panel-body">
                     <form class="form-inline" id="myWorkouts">
                         <select class="custom-select" id='addWorkout'>
                             <option selected>Choose Your Workout</option>
-
                             <option value="Cardio">Cardio</option>
                             <option value="Leg Day">Leg Day</option>
                             <option value="Arms">Upper body/Arms</option>
                             <option value="Core Workout">Core Workout</option>
-
                             <input type="text" class="form-control" id="minutes" aria-describedby="addMinutes" placeholder="Minutes?">
                         </select>
-                        <button type="button" class="btn btn-primary" id="submit">Feel the burn</button>
+                        <button type="button" class="btn btn-primary" id="submit">Submit</button>
                     </form>
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <h2 class="mb">Smack Talk Message Board</h2>
-                    <div class="current-messages">
-                        
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <div class="panel panel-default">
+        <div id="workoutpage"  id="workoutpage"  class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">My Workouts</div>
             <!-- Table -->
@@ -139,17 +109,14 @@
                     <th>Title</th>
                     <th>Points Earned</th>
                 </thead>
-
                 <tbody id="workoutTable">
                 </tbody>
             </table>
         </div>
         <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading">
-
-                <h2 class="mb">Message Board</h2>
-
+            <div id="workoutpage"  class="panel-heading">
+                <h2 class="mb">Smack Talk Message Board</h2>
             </div>
             <div class="panel-body">
                 <div class="current-messages">
@@ -160,10 +127,9 @@
                 </form>
             </div>
         </div>
-
     </div>
-    
-           <!--  ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  --> 
+
+        <!--  ALL THE FOOTER STUFF GOES HERE NO TOUCHIE  --> 
         <div id="footer">
             <div class="container">
                 <div class="row">
@@ -194,6 +160,8 @@
         </div>
         <!-- END OF FOOTER BACK TO REGULARLY SCHEDULED PROGRAMMING -->
 </body>
+
+
 <script type="text/javascript">
 $(document).ready(function() {
 
@@ -217,15 +185,14 @@ $(document).ready(function() {
         };
     });
 
-    $.get("/api/leaders/", function(data) {
+    $.get("/api/leaders", function(data) {
         for (let i = 0; i < data.length; i++) {
-            var newDate = data[i].createdAt.split('T');
             var newLeaderRow = $('<tr>')
-            var dateTd = $('<td>').text(newDate[0]);
-            var userTd = $('<td>').text(data[i].workoutTitle);
+            var rankTd = $('<td>').text(i+1);
+            var userTd = $('<td>').text(data[i].userName);
             var pointsTd = $('<td>').text(data[i].points);
-            newWorkoutRow.append(dateTd, titleTd, pointsTd);
-            $('#workoutTable').append(newWorkoutRow);
+            newLeaderRow.append(rankTd,userTd, pointsTd);
+            $('#leaderTable').append(newLeaderRow);
         }
     })
 });
@@ -243,7 +210,7 @@ $("#smack-submit").click(function() {
 
 $('#submit').on('click', function() {
     var userName = localStorage.getItem('username');
-
+    var currentPoints = localStorage.getItem('points');
     var type = $("#addWorkout").val();
     var mins = parseInt($("#minutes").val().trim());
     if (mins !== mins * 1 || type == "Choose Your Workout") {
@@ -251,24 +218,27 @@ $('#submit').on('click', function() {
     } else {
         var points;
         switch (type) {
-
             case "Cardio":
-                points = mins * 2;
+                points = mins;
                 break;
             case "Leg Day":
-                points = mins * 5;
+                points = mins * 2;
                 break;
             case "Arms":
-                points = mins * 5;
+                points = mins * 2;
                 break;
             case "Core Workout":
-
-                points = mins * 7;
+                points = mins * 3;
                 break;
             default:
                 break;
         };
-
+        var newTotal = parseInt(currentPoints) + parseInt(points);
+        var currentPoints = localStorage.setItem('points',newTotal);
+        var updatePoints = {
+            userName:userName,
+            newPoints:newTotal
+        };
         var newWorkout = {
             userName: userName,
             workoutTitle: type,
@@ -277,9 +247,8 @@ $('#submit').on('click', function() {
         $.ajax({
             method: "PUT",
             url: "/api/users",
-            data: newWorkout
+            data: updatePoints
         }).then(function() {
-            console.log('point updated')
         })
 
 
@@ -287,6 +256,8 @@ $('#submit').on('click', function() {
         alert('Workout Added. Nice job!');
         location.reload();
     }
+
+    $.post("/api/workouts/", newWorkout);
 
 })
 </script>

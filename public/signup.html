@@ -9,6 +9,9 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <style type="text/css">
+   body { background: #1C1C1C !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
 <body>
 
           <!-- ALL THE NAV BAR STUFF GOES HERE -->
@@ -24,13 +27,13 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <a class="navbar-brand" href="https://www.youtube.com/watch?v=McSORXpvZlw">#Swolemate Enterprises</a>
+            <a class="navbar-brand" href="https://youtu.be/McSORXpvZlw?t=55">#Swolemate Enterprises</a>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-2">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Workouts</a></li>
-                    <li><a href="#">Scoreboard</a></li>
+                    <li><a href="workouts">Home</a></li>
+                    <li><a href="workouts">Leaderboard</a></li>
+                    <li><a href="signup">Sign up</a></li>
                     <li>
                         <form>
                             <div id="needspadding">
@@ -55,24 +58,10 @@
                 </ul>
                 </div>
                 </form>
-                <!--                 <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
-                    <form class="navbar-form navbar-right form-inline" role="form">
-                        <div class="form-group">
-                            <label class="sr-only" for="Email">Email</label>
-                            <input type="email" class="form-control" id="username" placeholder="Email" autofocus required />
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="Password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" required />
-                        </div>
-                        <button id="#sign-in" type="button" class="btn btn-success">Sign in</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /.navbar-collapse
-        </div>
-        <!-- /.container -->
+
     </nav>
+
+<!--     THE END OF THE HEADER TRY NOT TO ADD TO MUCH HERE -->
     <div id="builduser">
     <form id="build-user">
         <div class="container">
@@ -97,7 +86,7 @@
                 <label for="Password">Pick a Password</label>
                 <input type="password" class="form-control" id="Password" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="workouts" role="button" type="submit" class="btn btn-primary">Submit</a></button>
     </form>
     </div>
     
@@ -151,17 +140,13 @@ $(document).ready(function() {
             userName: userName,
             password: password,
         };
-
-
-
+        localStorage.setItem("username", userName);
+        localStorage.setItem("points", 0);
         $.post("/api/user", newUser,function(){
-
-
             alert('You are one step closer to gettin\' SWOLE')
-            window.location.href = "/homepage";
+            window.location.href = "/workouts";
         });
     })
-
 
 });
 </script>

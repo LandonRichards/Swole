@@ -3,48 +3,15 @@
 
 <head>
     <title>SwoleMates! Find your workout buddy</title>
+    <link rel="stylesheet" href="style.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-
-<body class="ibod">
-    <div class="jumbotron">    
-        <div class="container">
-            <br>
-            <h1 class="display-4">Find your SwoleMate!</h1>
-            <p class="lead"></p>
-            <br><br><br>
-        </div>
-    </div>
-
-
-    <!-- <div class="jumbotron">
-        <div class="container">
-            About
-            <br><br><br> <!keep filling br until the height is to your liking>
-        </div>
-    </div>  -->
-
-    <div id="description">
-        <h2>Earn points by working your ass off,<br> beat your buddy and climb the leaderboard.<br> Are you ready to get those gains?</h2>
-    </div>
-    <br>
-    <div id="buttons">
-        <button id="sign-up"><a href="/signup">Sign Up</a></button>
-        <button id="sign-in">Sign In</button>
-    </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Enter Username and PW</h4>
-
-
-
+    <style type="text/css">
+   body { background: #1C1C1C !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+<body>
     <!-- ALL THE NAV BAR STUFF GOES HERE -->
     <!-- Second navbar for sign in -->
     <nav class="navbar navbar-default">
@@ -62,9 +29,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-2">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Workouts</a></li>
-                    <li><a href="#">Scoreboard</a></li>
+                    <li><a href="signup">Home</a></li>
+                    <li><a href="workouts">Workouts</a></li>
+                    <li><a href="workouts">Scoreboard</a></li>
                     <li>
                         <form>
                             <div id="needspadding">
@@ -87,7 +54,6 @@
                         </div>
                     </li>
                 </ul>
-
                 </div>
                 </form>
                 <!--                 <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
@@ -172,24 +138,20 @@ $("#sign-in").on('click', function(event) {
     var user = {
         userName: userName,
         passWord: passWord
-
     };
 
     //need to figure out how to check user name/pw on server side
 
-    $.post("/api/users", user).done(function(data) {
+    $.post('/api/users/', user).done(function(response) {
         //not sure how to get the obj Im trying to return in api-routes 
-        localStorage.setItem("username", data);
-
-// Access some stored data
-
-        console.log(data)
-        window.location.href = "/workouts";
-
-     
+        console.log(userName)
+        console.log(response)
+        window.location.href = "/workouts/";
     });
 
 
 })
 </script>
 
+
+</html>
